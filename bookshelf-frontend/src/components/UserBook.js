@@ -7,8 +7,8 @@ class UserBook extends Component {
     return(
       <div>
         <li>
-            {userBook.title}
-            {userBook.author}
+            <h3>{userBook.title}</h3>
+            <h4>By {userBook.author}</h4>
             <button onClick={() => this.props.deleteBook(userBook.id)}>Delete</button>
         </li>
       </div>
