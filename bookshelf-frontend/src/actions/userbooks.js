@@ -12,7 +12,6 @@ export const deleteBook = id => {
 };
 
 export const setBooks = books => {
-    console.log(books)
     return { type: SET_BOOKS, books };
 };
 
@@ -22,6 +21,7 @@ export const fetchUserBooks = () => {
             .then(r => r.json())
             .then(data => {
                 dispatch(setBooks(data));
+                console.log(data)
         });
 };
 
