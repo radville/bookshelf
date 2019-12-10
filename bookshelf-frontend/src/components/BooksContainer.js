@@ -6,18 +6,45 @@ import { connect } from 'react-redux'
 class BooksContainer extends Component {
 
     state = {
-        books: []
+        books: [],
+        genres: []
     }
 
-//   fetchBooks method, set global state books list from NYTIMES API
+    fetchGenres = () => {
+        fetch('https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=FajJZMrfajSMjU8FfzTVV4UCJVJKWh3z')
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    ...this.state,
+                    genres: data.results
+                })
+            })
+    }
 
+    fetchBooks = () => {
+        this.state.genres.map(genre =>
+            fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${genre}.json?api-key=FajJZMrfajSMjU8FfzTVV4UCJVJKWh3z`)
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    ...this.state,
+                    books: data.results
+                })
+            })
+        )
+    }
 
-  render() {
-    return (
-      <div>
-        <Books books={this.state.books} addBook={this.props.addBook} deleteBook={this.props.deleteBook}/>
-      </div>
-    )
+    componentDidMount() {
+        this.fetchGenres();
+        this.fetchBooks();
+    }
+
+    render() {
+        return (
+        <div>
+            <Books books={this.state.books} addBook={this.props.addBook} deleteBook={this.props.deleteBook}/>
+        </div>
+        )
   }
 }
 
