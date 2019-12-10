@@ -6,6 +6,7 @@ class UserBook extends Component {
     const { userBook } = this.props 
     return(
       <div>
+          UserBook component
         <li>
             <h3>{userBook.title}</h3>
             <h4>By {userBook.author}</h4>

@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import UserList from './UserList';
-
 import { connect } from 'react-redux'
+import {
+    destroyBook,
+    fetchBooks    
+} from "../actions/userbooks";
 
 class UserListContainer extends Component {
   render() {
     return (
       <div>
-        <UserList userBooks={this.props.userBooks} deleteBook={this.props.deleteBook}/>
+        <UserList userBooks={this.props.userBooks} destroyBook={this.props.destroyBook}/>
       </div>
     )
   }
@@ -15,8 +18,4 @@ class UserListContainer extends Component {
 
 const mapStateToProps = ({ userBooks }) => ({ userBooks })
 
-const mapDispatchToProps = dispatch => ({
-  deleteBook: bookID => dispatch({type: "DELETE_BOOK", id: bookID})
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserListContainer)
+export default connect(mapStateToProps, { destroyBook, fetchBooks })(UserListContainer)

@@ -5,9 +5,10 @@ class UserList extends Component {
 
   render() {
     return(
-      <div>
-        {this.props.userBooks.map(userBook => <UserBook {...userBook} deleteBook={this.props.deleteBook} key={userBook.id} userBook={userBook}/>)}
-      </div>
+        <div>
+            UserList Component 
+                {this.props.userBooks.map(userBook => <UserBook {...userBook} deleteBook={this.props.deleteBook} key={userBook.id} userBook={userBook}/>)}
+        </div>
     );
   }
 };

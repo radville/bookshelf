@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Books from './Books';
-
-import { connect } from 'react-redux'
+import { createBook } from "../actions/userbooks";
 
 class BooksContainer extends Component {
 
@@ -27,10 +27,10 @@ class BooksContainer extends Component {
             .then(response => response.json())
             .then(data => {
                 console.log(data.results)
-                // this.setState({
-                //     ...this.state,
-                //     books: data.results
-                // })
+                this.setState({
+                    ...this.state,
+                    books: data.results
+                })
             })
         )
     }
@@ -41,17 +41,13 @@ class BooksContainer extends Component {
     }
 
     render() {
+        console.log(this.state)
         return (
         <div>
-            <Books books={this.state.books} addBook={this.props.addBook} deleteBook={this.props.deleteBook}/>
+            <Books books={this.state.books} createBook={this.props.createBook} />
         </div>
         )
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  addBook: bookInfo => dispatch({ type: "ADD_BOOK", bookInfo}),
-  delete: bookID => dispatch({type: "DELETE_BOOK", id: bookID})
-})
-
-export default connect(null, mapDispatchToProps)(BooksContainer)
+export default connect(null, { createBook })(BooksContainer);

@@ -1,9 +1,15 @@
 import cuid from 'cuid';
 export const cuidFn = cuid;
 
+import {
+    ADD_BOOK,
+    DELETE_BOOK,
+    SET_BOOKS
+} from "../actions/userbooks";
+
 export default function manageBooks(state = { userBooks: []}, action) {
     switch (action.type) {
-        case "ADD_BOOK":
+        case ADD_BOOK:
             const userBook = {
                 id: cuid(),
                 title: action.title,
@@ -13,9 +19,11 @@ export default function manageBooks(state = { userBooks: []}, action) {
             }
             return {...state, userBooks: [...state.userBooks, userBook]};
 
-        case "DELETE_BOOK":
+        case DELETE_BOOK:
             return {...state, userBooks: state.userBooks.filter(userBook => userBook.id !== action.id)};
 
+        case SET_BOOKS:
+            return action.books;
         default:
             return state;
     }

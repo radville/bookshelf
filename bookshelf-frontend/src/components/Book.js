@@ -6,6 +6,7 @@ class Book extends Component {
     const { book } = this.props 
     return(
       <div>
+        Book component
         <li>
             {book.title}
             <button onClick={() => this.props.addBook(book.id)}>Add to List</button>
