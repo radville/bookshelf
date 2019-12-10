@@ -12,6 +12,7 @@ export const deleteBook = id => {
 };
 
 export const setBooks = books => {
+    console.log(books)
     return { type: SET_BOOKS, books };
 };
 

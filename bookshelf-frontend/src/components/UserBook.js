@@ -10,7 +10,7 @@ class UserBook extends Component {
         <li>
             <h3>{userBook.title}</h3>
             <h4>By {userBook.author}</h4>
-            <button onClick={() => this.props.deleteBook(userBook.id)}>Delete</button>
+            <button onClick={() => this.props.destroyBook(userBook.id)}>Delete</button>
         </li>
       </div>
     );

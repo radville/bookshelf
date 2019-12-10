@@ -1,13 +1,13 @@
-import cuid from 'cuid';
-export const cuidFn = cuid;
-
 import {
     ADD_BOOK,
     DELETE_BOOK,
     SET_BOOKS
 } from "../actions/userbooks";
 
-export default function manageBooks(state = { userBooks: []}, action) {
+import cuid from 'cuid';
+export const cuidFn = cuid;
+
+export default function manageBooks(state = { userBooks: [] }, action) {
     switch (action.type) {
         case ADD_BOOK:
             const userBook = {
@@ -24,6 +24,7 @@ export default function manageBooks(state = { userBooks: []}, action) {
 
         case SET_BOOKS:
             return action.books;
+
         default:
             return state;
     }
