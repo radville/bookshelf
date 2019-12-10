@@ -18,18 +18,19 @@ class BooksContainer extends Component {
                     ...this.state,
                     genres: data.results
                 })
-            })
+            });
     }
 
     fetchBooks = () => {
         this.state.genres.map(genre =>
-            fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${genre}.json?api-key=FajJZMrfajSMjU8FfzTVV4UCJVJKWh3z`)
+            fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${genre.list_name.replace(/\s+/g,'-').toLowerCase()}.json?api-key=FajJZMrfajSMjU8FfzTVV4UCJVJKWh3z`)
             .then(response => response.json())
             .then(data => {
-                this.setState({
-                    ...this.state,
-                    books: data.results
-                })
+                console.log(data.results)
+                // this.setState({
+                //     ...this.state,
+                //     books: data.results
+                // })
             })
         )
     }
