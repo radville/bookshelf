@@ -3,11 +3,15 @@ import {
     DELETE_BOOK,
     SET_BOOKS
 } from "../actions/userbooks";
+import {
+    SET_GENRES,
+    SET_GENRE_BOOKS
+} from "../actions/nytimes";
 
 import cuid from 'cuid';
 export const cuidFn = cuid;
 
-export default function manageBooks(state = { userBooks: [] }, action) {
+export default function manageBooks(state = { userBooks: [], books: [], genres: [] }, action) {
     switch (action.type) {
         case ADD_BOOK:
             const userBook = {
@@ -24,6 +28,12 @@ export default function manageBooks(state = { userBooks: [] }, action) {
 
         case SET_BOOKS:
             return {...state, userBooks: [...action.books]};
+        
+        case SET_GENRE_BOOKS:
+            return {...state, books: [...action.books]};
+        
+        case SET_GENRES:
+            return {...state, genres: [...action.genres]}
 
         default:
             return state;

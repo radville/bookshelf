@@ -1,4 +1,4 @@
-export const GET_BOOKS = "GET_BOOKS"
+export const FETCH_GENRE_BOOKS = "FETCH_GENRE_BOOKS"
 export const SET_GENRE_BOOKS = "SET_GENRE_BOOKS"
 export const FETCH_GENRES = "FETCH_GENRES"
 export const SET_GENRES = "SET_GENRES"
@@ -9,7 +9,7 @@ export const setGenreBooks = books => {
 };
 
 // gets the books in a particular genre from NYTimes
-export const getBooks = genre => {
+export const fetchGenreBooks = genre => {
     const slug = genre.replace(/\s+/g, '-').toLowerCase();
 
     return dispatch => 
@@ -18,7 +18,7 @@ export const getBooks = genre => {
             .then(data => {
                 dispatch(setGenreBooks(data))
             });
-            .then(window.location.href= `/books/${slug}`)
+            // .then(window.location.href= `/books/${slug}`)
 }
 
 // sets genres on the page after they're fetched
@@ -33,9 +33,5 @@ export const fetchGenres = () => {
             .then(response => response.json())
             .then(data => {
                 dispatch(setGenres(data))
-                // this.setState({
-                //     ...this.state,
-                //     genres: data
-                // })
             });
 }
