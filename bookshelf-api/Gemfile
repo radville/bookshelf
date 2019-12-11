@@ -40,4 +40,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# User authentication
 gem 'devise'
+
+# Get data from NYTimes API
+gem 'rest-client'
+
+# .env file creation
+gem 'dotenv-rails', groups: [:development, :test]
