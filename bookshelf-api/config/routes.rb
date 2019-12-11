@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root to: 'books#index'
   get '/genres', to: 'bestsellers#genres'
-  get '/bestsellers', to: 'bestsellers#show'
+  get '/bestsellers/:genre', to: 'bestsellers#show'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Genres from './Genres';
 import { createBook } from "../actions/userbooks";
 
-class BooksContainer extends Component {
+class GenreContainer extends Component {
 
     state = {
         books: [],
@@ -46,4 +46,4 @@ class BooksContainer extends Component {
   }
 }
 
-export default connect(null, { createBook })(BooksContainer);
+export default connect(null, { createBook })(GenreContainer);

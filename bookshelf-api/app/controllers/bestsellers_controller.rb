@@ -16,10 +16,10 @@ class BestsellersController < ApplicationController
 
         render json: @genres
     end
-
+    
     def show
-        response = RestClient.get("https://api.nytimes.com/svc/books/v3/lists/current/#{params[:slug]}.json?api-key=#{ENV['NYTIMES_KEY']}")
-        @books = JSON.parse(response)["books"]
+        response = RestClient.get("https://api.nytimes.com/svc/books/v3/lists/current/#{params[:genre]}.json?api-key=#{ENV['NYTIMES_KEY']}")
+        @books = JSON.parse(response)["results"]["books"]
         
         render json: @books
     end

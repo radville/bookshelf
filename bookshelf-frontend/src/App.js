@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBar';
-import BooksContainer from './components/BooksContainer'
+import GenreContainer from './components/GenreContainer'
 import UserListContainer from './components/UserListContainer'
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -20,8 +20,9 @@ function App() {
             <h2>Browse NY Times Bestsellers and add them to your list to read later!</h2>
           </div>}
         />
-        <Route path="/books" render={routerProps => <BooksContainer {...routerProps}/>}/>
-        <Route path="/mylist" render={routerProps => <UserListContainer {...routerProps}/>}/>
+        <Route exact path="/bestsellers" render={routerProps => <GenreContainer {...routerProps}/>}/>
+        <Route path="/mybooks" render={routerProps => <UserListContainer {...routerProps}/>}/>
+        {/* <Route path="/books/:genre" render={routerProps => <Books {...routerProps}/>}/> */}
       </div>
     </Router>
   );
