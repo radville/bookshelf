@@ -6,8 +6,23 @@ import { createBook } from "../actions/userbooks";
 class GenreContainer extends Component {
 
     state = {
-        books: [],
-        genres: []
+        genres: [],
+        books: []
+    }
+
+    getBooks = (genre) => {
+        const slug = genre.replace(/\s+/g, '-').toLowerCase();
+
+        fetch(`http://localhost:3000/bestsellers/${slug}`)
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    ...this.state,
+                    books: data})
+            });
+        
+        window.location.href= `/books/${slug}`
+        
     }
 
     fetchGenres = () => {
@@ -21,18 +36,6 @@ class GenreContainer extends Component {
             });
     }
 
-    fetchBooks = (genre) => {
-        fetch(``)
-            .then(response => response.json())
-            .then(data => {
-
-                console.log(data.results)
-                this.setState({
-                    ...this.state, books: [...this.state.books, data.results]
-                })
-        })
-    }
-
     componentDidMount() {
         this.fetchGenres();
     }
@@ -40,7 +43,7 @@ class GenreContainer extends Component {
     render() {
         return (
             <div>
-                <Genres genres={this.state.genres} createBook={this.props.createBook} />
+                <Genres getBooks={this.getBooks} genres={this.state.genres} createBook={this.props.createBook} />
             </div>
         )
   }
