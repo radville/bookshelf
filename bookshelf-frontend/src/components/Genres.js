@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Books from "./Books.js"
+import { Link } from 'react-router-dom';
 
 class Genres extends Component {
 
@@ -11,9 +11,10 @@ class Genres extends Component {
                     <div className="d-flex flex-row flex-wrap"> 
                     {this.props.genres.map(genre => 
                         <div className="list-group-item w-50 list-group-item-action" 
-                            onClick={()=>{this.props.fetchGenreBooks(genre)}}
+                            // onClick={()=>{this.props.fetchGenreBooks(genre)}}
                         >
                             {genre}
+                            <Link to={`/bestsellers/${genre}`}>Link</Link>
                         </div>
                         
                     )}

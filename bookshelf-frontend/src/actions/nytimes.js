@@ -1,6 +1,6 @@
-// export const FETCH_GENRE_BOOKS = "FETCH_GENRE_BOOKS"
+export const FETCH_GENRE_BOOKS = "FETCH_GENRE_BOOKS"
 export const SET_GENRE_BOOKS = "SET_GENRE_BOOKS"
-// export const FETCH_GENRES = "FETCH_GENRES"
+export const FETCH_GENRES = "FETCH_GENRES"
 export const SET_GENRES = "SET_GENRES"
 
 // saves the NYTimes books in a genre to redux state

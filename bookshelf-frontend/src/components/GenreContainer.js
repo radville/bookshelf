@@ -16,7 +16,7 @@ class GenreContainer extends Component {
     render() {
         return (
             <div>
-                <Genres fetchGenreBooks={this.props.fetchGenreBooks} genres={this.props.genres} createBook={this.props.createBook} />
+                <Genres fetchGenreBooks={this.props.fetchGenreBooks} books={this.props.books} genres={this.props.genres} createBook={this.props.createBook} />
             </div>
         )
   }

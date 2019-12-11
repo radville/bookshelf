@@ -7,7 +7,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import GenreContainer from './components/GenreContainer'
 import UserListContainer from './components/UserListContainer'
-import Books from './components/Books'
+import BooksContainer from './components/BooksContainer'
 import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
         />
         <Route exact path="/bestsellers" render={routerProps => <GenreContainer {...routerProps}/>}/>
         <Route path="/mybooks" render={routerProps => <UserListContainer {...routerProps}/>}/>
-        <Route path="/bestsellers/:genre" render={routerProps => <Books {...routerProps}/>}/>
+        <Route path="/bestsellers/:genre" render={routerProps => <BooksContainer {...routerProps}/>}/>
       </div>
     </Router>
   );
