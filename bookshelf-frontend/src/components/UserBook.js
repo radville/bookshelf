@@ -6,8 +6,8 @@ class UserBook extends Component {
     const { userBook } = this.props 
     return(
       <div>
-        <li>
-            <h3>{userBook.title}</h3>
+        <div className="list-group-item w-50 list-group-item" >
+            <h5>{userBook.title}</h5>
             <div>By {userBook.author}</div>
             <button 
                 type="button" 
@@ -16,7 +16,7 @@ class UserBook extends Component {
             >
                 Delete
             </button>
-        </li>
+        </div>
       </div>
     );
   }

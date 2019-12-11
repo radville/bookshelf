@@ -18,20 +18,17 @@ class Genres extends Component {
 
     render() {
         return(
-            <div>
+            <div className="container">
                 <h3>Select a genre to see bestsellers</h3>
-                <div className="card">
+                <div className="col-15">
+                    <div className="d-flex flex-row flex-wrap"> 
                     {this.props.genres.map(genre => 
-                        <div className="card-block">
-                            <button
-                                onClick={() => {this.getBooks(genre)}}
-                                type="button"
-                                className="btn btn-primary"
-                            >
-                                {genre}
-                            </button>
+                        <div className="list-group-item w-50 list-group-item-action" onClick={()=>{this.getBooks(genre)}}>
+                            {genre}
                         </div>
+                        
                     )}
+                    </div>
                 </div>
             </div>
         );
