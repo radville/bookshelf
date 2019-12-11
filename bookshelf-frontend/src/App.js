@@ -23,7 +23,7 @@ function App() {
         />
         <Route exact path="/bestsellers" render={routerProps => <GenreContainer {...routerProps}/>}/>
         <Route path="/mybooks" render={routerProps => <UserListContainer {...routerProps}/>}/>
-        <Route path="/books/:genre" render={routerProps => <Books {...routerProps}/>}/>
+        <Route path="/bestsellers/:genre" render={routerProps => <Books {...routerProps}/>}/>
       </div>
     </Router>
   );

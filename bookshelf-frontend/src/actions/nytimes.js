@@ -18,7 +18,7 @@ export const fetchGenreBooks = genre => {
             .then(data => {
                 dispatch(setGenreBooks(data))
             })
-            .then(() => {window.location.href= `/books/${slug}`})
+            .then(() => {window.location.href= `/bestsellers/${slug}`})
 }
 
 // sets genres on the page after they're fetched
