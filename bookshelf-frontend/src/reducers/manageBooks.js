@@ -23,7 +23,7 @@ export default function manageBooks(state = { userBooks: [] }, action) {
             return {...state, userBooks: state.userBooks.filter(userBook => userBook.id !== action.id)};
 
         case SET_BOOKS:
-            return action.books;
+            return {...state, userBooks: [...action.books]};
 
         default:
             return state;

@@ -12,7 +12,6 @@ class UserListContainer extends Component {
     }
 
     render() {
-        // console.log(this.props)
         return (
         <div>
             <UserList userBooks={this.props.userBooks} destroyBook={this.props.destroyBook}/>

@@ -4,10 +4,13 @@ import UserBook from "./UserBook.js"
 class UserList extends Component {
 
   render() {
+    //   console.log(this.props.userBooks)
     return(
         <div>
-            UserList Component 
-            {this.props.userBooks.map(userBook => <UserBook {...userBook} destroyBook={this.props.destroyBook} key={userBook.id} userBook={userBook}/>)}
+            <h2>My books list</h2>
+            <ul>
+                {this.props.userBooks.map(userBook => <UserBook {...userBook} destroyBook={this.props.destroyBook} key={userBook.id} userBook={userBook}/>)}
+            </ul>
         </div>
     );
   }

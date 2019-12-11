@@ -14,11 +14,14 @@ function App() {
     <Router>
       <div className="App">
         <NavBar />
-        <Route exact path="/" render={() => <div>Home</div>} />
+        <Route exact path="/" render={() => 
+          <div>
+            <h1>Bookshelf</h1>
+            <h2>Browse NY Times Bestsellers and add them to your list to read later!</h2>
+          </div>}
+        />
         <Route path="/books" render={routerProps => <BooksContainer {...routerProps}/>}/>
         <Route path="/mylist" render={routerProps => <UserListContainer {...routerProps}/>}/>
-        <h1>Bookshelf</h1>
-        <h2>Browse NY Times Bestsellers and add them to your list to read later!</h2>
       </div>
     </Router>
   );

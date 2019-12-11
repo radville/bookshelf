@@ -6,11 +6,16 @@ class UserBook extends Component {
     const { userBook } = this.props 
     return(
       <div>
-          UserBook component
         <li>
             <h3>{userBook.title}</h3>
-            <h4>By {userBook.author}</h4>
-            <button onClick={() => this.props.destroyBook(userBook.id)}>Delete</button>
+            <div>By {userBook.author}</div>
+            <button 
+                type="button" 
+                onClick={() => this.props.destroyBook(userBook.id)}
+                className="btn btn-primary"
+            >
+                Delete
+            </button>
         </li>
       </div>
     );

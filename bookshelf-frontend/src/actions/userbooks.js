@@ -21,7 +21,6 @@ export const fetchUserBooks = () => {
             .then(r => r.json())
             .then(data => {
                 dispatch(setBooks(data));
-                console.log(data)
         });
 };
 

@@ -8,7 +8,7 @@ const NavBar = () => {
         style={{ marginRight: '10px' }} 
         to="/"
       >
-        Home
+        Bookshelf
       </NavLink>
       <NavLink 
         style={{ marginRight: '10px' }} 
