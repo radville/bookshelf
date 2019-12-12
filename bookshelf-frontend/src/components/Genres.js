@@ -10,13 +10,7 @@ class Genres extends Component {
                 <div className="col-15">
                     <div className="d-flex flex-row flex-wrap"> 
                     {this.props.genres.map(genre => 
-                        <div className="list-group-item w-50 list-group-item-action" 
-                            // onClick={()=>{this.props.fetchGenreBooks(genre)}}
-                        >
-                            {genre}
-                            <Link to={`/bestsellers/${genre}`}>Link</Link>
-                        </div>
-                        
+                            <Link to={`/bestsellers/${genre}`} className="list-group-item w-50 list-group-item-action">{genre}</Link>
                     )}
                     </div>
                 </div>
