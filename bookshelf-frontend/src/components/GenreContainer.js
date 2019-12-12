@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Genres from './Genres';
-import { createBook } from "../actions/userbooks";
-import {
-    fetchGenreBooks,
-    fetchGenres  
-} from "../actions/nytimes";
+import { fetchGenres } from "../actions/nytimes";
 
 class GenreContainer extends Component {
 
@@ -16,12 +12,12 @@ class GenreContainer extends Component {
     render() {
         return (
             <div>
-                <Genres fetchGenreBooks={this.props.fetchGenreBooks} books={this.props.books} genres={this.props.genres} createBook={this.props.createBook} />
+                <Genres fetchGenreBooks={this.props.fetchGenreBooks} genres={this.props.genres} />
             </div>
         )
   }
 }
 
-const mapStateToProps = ({ books, genres }) => ({ books, genres})
+const mapStateToProps = ({ genres }) => ({ genres})
 
-export default connect(mapStateToProps, { fetchGenreBooks, fetchGenres, createBook })(GenreContainer);
+export default connect(mapStateToProps, { fetchGenres })(GenreContainer);
