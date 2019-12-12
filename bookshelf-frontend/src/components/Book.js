@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 
 class Book extends Component {
+  componentDidMount() {
+    this.addBook = (book) => {
+      this.props.createBook(book)
+      window.location.href = "/mybooks";
+    }
+  }
 
   render() {
     const { book } = this.props 
@@ -16,7 +22,7 @@ class Book extends Component {
             <img className="img-fluid" src={book.book_image} alt={book.title} style={{maxHeight: "20vw"}}/>
             <p className="card-text">{book.description}</p>
             <button 
-                onClick={() => this.props.createBook(book)}
+                onClick={() => this.addBook(book)}
                 type="button"
                 className="btn btn-primary"
             >
