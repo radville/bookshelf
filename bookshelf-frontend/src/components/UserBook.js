@@ -18,7 +18,10 @@ class UserBook extends Component {
     const { userBook } = this.props
     return(
       <div>
-        <div className="list-group-item list-group-item" style={{textDecoration: userBook.read ? 'line-through' : 'none'}}>
+        <div 
+          className="list-group-item list-group-item"
+          style={{maxWidth: "30vw", textDecoration: userBook.read ? 'line-through' : 'none'}}
+        >
             <h5><a href={userBook.amazon_product_url}>{userBook.title}</a></h5>
             <h6>by {userBook.author}</h6>
             <img className="img-fluid" src={userBook.book_image} alt={userBook.title} style={{maxWidth: "10vw"}}/>
