@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import UserList from './UserList';
+import UserList from '../components/UserList';
 import { connect } from 'react-redux'
 import {
     destroyBook,

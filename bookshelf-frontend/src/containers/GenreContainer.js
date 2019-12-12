@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Genres from './Genres';
+import Genres from '../components/Genres';
 import { fetchGenres } from "../actions/nytimes";
 
 class GenreContainer extends Component {

@@ -4,9 +4,11 @@ class Book extends Component {
 
   render() {
     const { book } = this.props 
+    console.log(book)
+
     return(
-      <div key={book.id} className="card bg-light mb-3">
-        <li className="card-block">
+      <div key={book.key} className="card bg-light mb-3">
+        <li key={book.primary_isbn10} className="card-block">
           <div className="card-body">
             <a href={book.amazon_product_url} style={{ fontWeight: "bold", fontSize: "1.2em" }}>
               {book.title}

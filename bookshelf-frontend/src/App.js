@@ -5,9 +5,9 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBar';
-import GenreContainer from './components/GenreContainer'
-import UserListContainer from './components/UserListContainer'
-import BooksContainer from './components/BooksContainer'
+import GenreContainer from './containers/GenreContainer'
+import UserListContainer from './containers/UserListContainer'
+import BooksContainer from './containers/BooksContainer'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
