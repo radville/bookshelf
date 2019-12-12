@@ -16,7 +16,7 @@ class BooksController < ApplicationController
   
     # POST /books
     def create
-      @book = book.new(book_params)
+      @book = Book.new(book_params)
   
       if @book.save
         render json: @book, status: :created, location: @book
@@ -47,6 +47,6 @@ class BooksController < ApplicationController
   
       # Only allow a trusted parameter "white list" through.
       def book_params
-        params.require(:book).permit(:title, :author, :description, :url)
+        params.require(:book).permit(:title, :author, :description, :amazon_product_url, :book_image)
       end
 end

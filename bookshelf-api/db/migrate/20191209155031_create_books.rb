@@ -4,7 +4,9 @@ class CreateBooks < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :author
       t.string :description
-      t.string :url
+      t.string :amazon_product_url
+      t.string :book_image
+      t.boolean :read, default: false
 
       t.timestamps
     end

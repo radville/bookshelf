@@ -19,7 +19,9 @@ ActiveRecord::Schema.define(version: 2019_12_09_160859) do
     t.string "title"
     t.string "author"
     t.string "description"
-    t.string "url"
+    t.string "amazon_product_url"
+    t.string "book_image"
+    t.boolean "read", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

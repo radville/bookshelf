@@ -10,11 +10,12 @@ class BooksContainer extends Component {
   }
 
   render() {
-    console.log("bookscontainer", this.props)
     return(
       <div>
           <h3>{this.props.match.params.genre}</h3>
-          {this.props.books.map(book => <Book {...book} createBook={this.props.createBook} key={book.id} book={book}/>)}
+          <ol>
+            {this.props.books.map(book => <Book {...book} createBook={this.props.createBook} key={book.id} book={book}/>)}
+          </ol>
       </div>
     );
   }
