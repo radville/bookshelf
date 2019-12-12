@@ -9,8 +9,6 @@ import GenreContainer from './containers/GenreContainer'
 import UserListContainer from './containers/UserListContainer'
 import BooksContainer from './containers/BooksContainer'
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 function App() {
   return (

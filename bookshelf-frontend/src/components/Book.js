@@ -4,8 +4,7 @@ class Book extends Component {
 
   render() {
     const { book } = this.props 
-    console.log(book)
-
+    
     return(
       <div key={book.key} className="card bg-light mb-3">
         <li key={book.primary_isbn10} className="card-block">
