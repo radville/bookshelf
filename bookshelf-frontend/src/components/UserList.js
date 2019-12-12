@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import UserBook from "./UserBook.js"
 
 class UserList extends Component {
-
   render() {
     return(
         <div>
