@@ -31,12 +31,6 @@ const NavBar = () => {
             BOOKSHELF
         </Nav.Item>
         <NavLink 
-            style={{ marginRight: '10vw', textDecoration: 'none', color: "white" }} 
-            to="/"
-        >
-        Home
-        </NavLink> 
-        <NavLink 
             style={{ marginRight: '10vw', textDecoration: 'none', color: "white"  }} 
             to="/bestsellers"
         >
