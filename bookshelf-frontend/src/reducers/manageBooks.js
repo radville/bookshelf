@@ -10,7 +10,6 @@ import {
 } from "../actions/nytimes";
 
 import cuid from 'cuid';
-export const cuidFn = cuid;
 
 export default function manageBooks(state = { userBooks: [], books: [], genres: [] }, action) {
     switch (action.type) {
