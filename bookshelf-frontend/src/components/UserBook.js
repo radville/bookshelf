@@ -10,8 +10,8 @@ class UserBook extends Component {
     }
   }
 
-  readToggle = () => {
-    this.props.readToggle()
+  readToggle = userBook => {
+    this.props.readToggle(userBook)
   }
 
   render() {
@@ -31,7 +31,7 @@ class UserBook extends Component {
             </button>
             <button 
                 type="button" 
-                onClick={() => this.readToggle()}
+                onClick={() => this.readToggle(userBook)}
                 className="btn btn-primary"
             >
               {this.readMessage()}

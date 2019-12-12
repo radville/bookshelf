@@ -3,7 +3,8 @@ import UserList from './UserList';
 import { connect } from 'react-redux'
 import {
     destroyBook,
-    fetchUserBooks    
+    fetchUserBooks,
+    readToggle   
 } from "../actions/userbooks";
 
 class UserListContainer extends Component {
@@ -14,7 +15,7 @@ class UserListContainer extends Component {
     render() {
         return (
         <div>
-            <UserList userBooks={this.props.userBooks} destroyBook={this.props.destroyBook}/>
+            <UserList userBooks={this.props.userBooks} destroyBook={this.props.destroyBook} readToggle={this.props.readToggle}/>
         </div>
         )
     }
@@ -22,4 +23,4 @@ class UserListContainer extends Component {
 
 const mapStateToProps = ({ userBooks }) => ({ userBooks })
 
-export default connect(mapStateToProps, { destroyBook, fetchUserBooks })(UserListContainer)
+export default connect(mapStateToProps, { destroyBook, fetchUserBooks, readToggle })(UserListContainer)

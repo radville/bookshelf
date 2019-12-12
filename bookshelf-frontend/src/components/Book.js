@@ -10,7 +10,7 @@ class Book extends Component {
       <div className="card card-inverse card-success card-primary mb-3">
         <li className="card-block">
             <h3><a href={book.amazon_product_url}>{book.title}</a></h3>
-            <img className="img-fluid" src={book.book_image} src={book.title}/>
+            <img className="img-fluid" src={book.book_image} alt={book.title}/>
             <h4>by {book.author}</h4>
             <p>{book.description}</p>
             <button 

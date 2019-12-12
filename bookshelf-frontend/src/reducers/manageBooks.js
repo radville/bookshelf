@@ -1,7 +1,8 @@
 import {
     ADD_BOOK,
     DELETE_BOOK,
-    SET_BOOKS
+    SET_BOOKS,
+    READ_TOGGLE
 } from "../actions/userbooks";
 import {
     SET_GENRES,
@@ -28,6 +29,16 @@ export default function manageBooks(state = { userBooks: [], books: [], genres: 
 
         case SET_BOOKS:
             return {...state, userBooks: [...action.books]};
+
+        case READ_TOGGLE:
+            let book = state.userBooks.find(userBook => userBook.id === action.id);
+            let index = state.userBooks.indexOf(book)
+            return {
+                ...state, userBooks:
+                [...state.userBooks.slice(0, index),
+                {...book, read: !book.read},
+                ...state.userBooks.slice(index + 1)]
+            };
         
         case SET_GENRE_BOOKS:
             return {...state, books: [...action.books]};
