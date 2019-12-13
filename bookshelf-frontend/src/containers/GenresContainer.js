@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Genres from '../components/Genres';
 import { fetchGenres } from "../actions/nytimes";
 
-class GenreContainer extends Component {
+class GenresContainer extends Component {
 
     componentDidMount() {
         this.props.fetchGenres();
@@ -20,4 +20,4 @@ class GenreContainer extends Component {
 
 const mapStateToProps = ({ genres }) => ({ genres})
 
-export default connect(mapStateToProps, { fetchGenres })(GenreContainer);
+export default connect(mapStateToProps, { fetchGenres })(GenresContainer);
