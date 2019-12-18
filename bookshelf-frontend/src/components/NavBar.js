@@ -5,9 +5,12 @@ import Nav from 'react-bootstrap/Nav';
 const NavBar = () => {
   return (
     <Nav className="mr-auto" style={{ background: "#505050", borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
-        <Nav.Item style={{ fontWeight: "bold", fontSize: "1.2em", marginRight: '10vw', color: "white" }}>
+        <NavLink 
+            style={{ fontWeight: "bold", fontSize: "1.2em", marginRight: '10vw', color: "white" }}
+            to="/"
+        >
             BOOKSHELF
-        </Nav.Item>
+        </NavLink>
         <NavLink 
             style={{ marginRight: '10vw', textDecoration: 'none', color: "white"  }} 
             to="/bestsellers"
