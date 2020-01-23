@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users, only: [:create, :show]
   resources :userbooks, only: [:new, :create, :show, :destroy]
   resources :books
 
