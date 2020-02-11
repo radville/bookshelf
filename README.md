@@ -4,6 +4,8 @@ The Bookshelf web app allows users to browse books on the NYTimes Bestsellers li
 
 Created in Ruby 2.6.1, React 16.12.0, and Redux 4.0.4. 
 
+Code for adding user authentication was adapted from Alejandro Sabogal, "React with Rails User Authentication", Medium. Nov. 11, 2019. https://medium.com/how-i-get-it/react-with-rails-user-authentication-8977e98762f2
+
 ### Installing
 
 1. Clone this repo to your local machine with `https://github.com/radville/booksehlf` 
