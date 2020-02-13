@@ -21,6 +21,37 @@ class App extends Component {
      };
   }
 
+  // get data from server and log user in
+  handleLogin = (data) => {
+    this.setState({
+      isLoggedIn: true,
+      user: data.user
+    })
+  }
+
+  // log user out if server says user not logged in
+  handleLogout = () => {
+    this.setState({
+    isLoggedIn: false,
+    user: {}
+    })
+  }
+
+  // get user data from server
+  loginStatus = () => {
+    axios.get('http://localhost:3001/logged_in', 
+    // allow Rails server to set and read the cookie on the front-end’s browser:
+    {withCredentials: true})
+    .then(response => {
+      if (response.data.logged_in) {
+        this.handleLogin(response)
+      } else {
+        this.handleLogout()
+      }
+    })
+    .catch(error => console.log('api errors:', error))
+  }
+
   render() {
     return (
       <Router>
