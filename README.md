@@ -14,11 +14,11 @@ Code for adding user authentication was adapted from Alejandro Sabogal, "React w
 
 3. Create and initialize the postgres database by running `rails db:create` and then `rails db:migrate`
 
-4. Start the Rails API site by entering `rails s` in the terminal.
+4. Start the Rails API site by entering `rails s` in the terminal from the `bookshelf-api` folder.
 
 5. From the `bookshelf-frontend` folder, run `npm install` in the terminal to download packages and dependencies.
 
-6. Launch the frontend with `npm start`, and run it from `http://localhost:3001`
+6. Launch the frontend with `npm start` from the `bookshelf-frontend` folder, and run it from `http://localhost:3001`
 
 
 ## Built With
