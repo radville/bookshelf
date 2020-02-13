@@ -18,7 +18,9 @@ Code for adding user authentication was adapted from Alejandro Sabogal, "React w
 
 5. From the `bookshelf-frontend` folder, run `npm install` in the terminal to download packages and dependencies.
 
-6. Launch the frontend with `npm start` from the `bookshelf-frontend` folder, and run it from `http://localhost:3001`
+6. Launch the frontend with `npm start` from the `bookshelf-frontend` folder
+
+7. In the browser, go to `http://localhost:3001` to see the app.
 
 
 ## Built With
