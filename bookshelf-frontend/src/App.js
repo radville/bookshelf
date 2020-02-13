@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {
   BrowserRouter as Router,
+  Switch,
   Route
 } from 'react-router-dom';
 import './App.css';
@@ -34,6 +35,12 @@ class App extends Component {
           <Route exact path="/bestsellers" render={routerProps => <GenresContainer {...routerProps}/>}/>
           <Route path="/mybooks" render={routerProps => <UserListContainer {...routerProps}/>}/>
           <Route path="/bestsellers/:genre" render={routerProps => <BooksContainer {...routerProps}/>}/>
+          {/* Switch components will only show the first matched child <Route/> for any given path.  */}
+          <Switch>
+            <Route exact path='/' component={}/>
+            <Route exact path='/login' component={}/>
+            <Route exact path='/signup' component={}/>
+          </Switch>
         </div>
       </Router>
     );}
