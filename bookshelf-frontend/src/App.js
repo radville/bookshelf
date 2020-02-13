@@ -20,6 +20,10 @@ class App extends Component {
       user: {}
      };
   }
+  // request login status every time App.js is mounted
+  componentDidMount() {
+    this.loginStatus()
+  }
 
   // get data from server and log user in
   handleLogin = (data) => {
