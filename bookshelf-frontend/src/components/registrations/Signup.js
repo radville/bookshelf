@@ -4,19 +4,21 @@ import axios from 'axios'
 class Signup extends Component {
     constructor(props) {
         super(props);
+
         this.state = { 
-        username: '',
-        email: '',
-        password: '',
-        password_confirmation: '',
-        errors: ''
+            username: '',
+            email: '',
+            password: '',
+            password_confirmation: '',
+            errors: ''
         };
     }
 
     handleChange = (event) => {
         const {name, value} = event.target
+        
         this.setState({
-        [name]: value
+            [name]: value
         })
     };
 
