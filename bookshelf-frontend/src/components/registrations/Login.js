@@ -6,17 +6,18 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-        username: '',
-        email: '',
-        password: '',
-        errors: ''
+            username: '',
+            email: '',
+            password: '',
+            errors: ''
         };
     }
 
     handleChange = (event) => {
         const {name, value} = event.target
+
         this.setState({
-        [name]: value
+            [name]: value
         })
     };
 
