@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import './App.css';
 import axios from 'axios';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from 'react-router-dom';
-import './App.css';
 import NavBar from './components/NavBar';
 import GenresContainer from './containers/GenresContainer'
 import UserListContainer from './containers/UserListContainer'
 import BooksContainer from './containers/BooksContainer'
-import 'bootstrap/dist/css/bootstrap.css';
+import Home from './components/Home'
+import Login from './components/registrations/Login'
+import Signup from './components/registrations/Signup'
 
 class App extends Component {
   constructor(props) {
@@ -20,6 +23,7 @@ class App extends Component {
       user: {}
      };
   }
+
   // request login status every time App.js is mounted
   componentDidMount() {
     this.loginStatus()
@@ -61,20 +65,23 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar />
-          <Route exact path="/" render={() => 
-            <div>
-              <h2>Bookshelf</h2>
-              <h4>Browse NY Times Bestsellers and add them to your list to read later!</h4>
-            </div>}
-          />
           <Route exact path="/bestsellers" render={routerProps => <GenresContainer {...routerProps}/>}/>
           <Route path="/mybooks" render={routerProps => <UserListContainer {...routerProps}/>}/>
           <Route path="/bestsellers/:genre" render={routerProps => <BooksContainer {...routerProps}/>}/>
           {/* Switch components will only show the first matched child <Route/> for any given path.  */}
           <Switch>
-            <Route exact path='/' component={}/>
-            <Route exact path='/login' component={}/>
-            <Route exact path='/signup' component={}/>
+            <Route exact path='/' render={props => (
+                <Home {...props} loggedInStatus={this.state.isLoggedIn}/>
+              )}
+            />
+            <Route exact path='/login' render={props => (
+                <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
+              )}
+            />
+            <Route exact path='/signup' render={props => (
+                <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
+              )}
+            />
           </Switch>
         </div>
       </Router>
