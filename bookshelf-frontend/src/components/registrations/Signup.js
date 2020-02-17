@@ -22,6 +22,7 @@ class Signup extends Component {
         })
     };
 
+    // create user object based on state, then post to Rails server
     handleSubmit = (event) => {
         event.preventDefault()
         const {username, email, password, password_confirmation} = this.state
@@ -33,6 +34,7 @@ class Signup extends Component {
         password_confirmation: password_confirmation
         }
 
+        // allows rails to set cookie
         axios.post('http://localhost:3001/users', {user}, {withCredentials: true})
             .then(response => {
                 if (response.data.status === 'created') {
@@ -47,6 +49,7 @@ class Signup extends Component {
             .catch(error => console.log('api errors:', error))
         };
 
+    // if user is authenticated, redirect to home page
     redirect = () => {
         this.props.history.push('/')
     }
