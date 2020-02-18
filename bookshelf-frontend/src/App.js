@@ -65,15 +65,15 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} />
-          <Route exact path="/bestsellers" render={routerProps => <GenresContainer {...routerProps}/>}/>
-          <Route path="/mybooks" render={routerProps => <UserListContainer {...routerProps}/>}/>
-          <Route path="/bestsellers/:genre" render={routerProps => <BooksContainer {...routerProps}/>}/>
           {/* Switch components will only show the first matched child <Route/> for any given path.  */}
           <Switch>
             <Route exact path='/' render={props => (
                 <Home {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn}/>
               )}
             />
+            <Route exact path="/bestsellers" render={routerProps => <GenresContainer {...routerProps}/>}/>
+            <Route path="/mybooks" render={routerProps => <UserListContainer {...routerProps}/>}/>
+            <Route path="/bestsellers/:genre" render={routerProps => <BooksContainer {...routerProps}/>}/>
             <Route exact path='/login' render={props => (
                 <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
               )}
