@@ -13,6 +13,11 @@ class Login extends Component {
         };
     }
 
+    // redirect if the user is already logged in
+    componentWillMount() {
+        return this.props.loggedInStatus ? this.redirect() : null
+    }
+
     handleChange = (event) => {
         const {name, value} = event.target
 

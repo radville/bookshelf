@@ -71,7 +71,7 @@ class App extends Component {
           {/* Switch components will only show the first matched child <Route/> for any given path.  */}
           <Switch>
             <Route exact path='/' render={props => (
-                <Home {...props} loggedInStatus={this.state.isLoggedIn}/>
+                <Home {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn}/>
               )}
             />
             <Route exact path='/login' render={props => (
