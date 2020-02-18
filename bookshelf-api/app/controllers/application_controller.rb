@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
     # prevent Rails from using its authenticity token because we're treating backend as API
     skip_before_action :verify_authenticity_token
 
