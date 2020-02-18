@@ -64,7 +64,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <NavBar />
+          <NavBar handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} />
           <Route exact path="/bestsellers" render={routerProps => <GenresContainer {...routerProps}/>}/>
           <Route path="/mybooks" render={routerProps => <UserListContainer {...routerProps}/>}/>
           <Route path="/bestsellers/:genre" render={routerProps => <BooksContainer {...routerProps}/>}/>
