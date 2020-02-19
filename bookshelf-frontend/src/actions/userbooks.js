@@ -18,7 +18,7 @@ export const setBooks = books => {
 
 export const fetchUserBooks = () => {
     return dispatch => 
-        fetch("http://localhost:3000/books")
+        fetch("http://localhost:3001/books")
             .then(r => r.json())
             .then(data => {
                 dispatch(setBooks(data));
@@ -27,7 +27,7 @@ export const fetchUserBooks = () => {
 
 export const createBook = book => {
   return dispatch =>
-    fetch("http://localhost:3000/books", {
+    fetch("http://localhost:3001/books", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -42,7 +42,7 @@ export const createBook = book => {
   
 export const destroyBook = id => {
   return dispatch =>
-    fetch(`http://localhost:3000/books/${id}`, {
+    fetch(`http://localhost:3001/books/${id}`, {
       method: "DELETE"
     }).then(() => {
       dispatch(deleteBook(id));
@@ -55,7 +55,7 @@ export const localReadToggle = id => {
 
 export const readToggle = book => {
   return dispatch => 
-    fetch(`http://localhost:3000/books/${book.id}`, {
+    fetch(`http://localhost:3001/books/${book.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
