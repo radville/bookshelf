@@ -28,7 +28,7 @@ export const setGenres = genres => {
 // Fetches list of genres from NYTimes
 export const fetchGenres = () => {
     return dispatch => 
-        fetch('http://localhost:3000/genres')
+        fetch('http://localhost:3001/genres')
             .then(response => response.json())
             .then(data => {
                 dispatch(setGenres(data))
