@@ -13,7 +13,7 @@ export const fetchGenreBooks = genre => {
     const slug = genre.replace(/\s+/g, '-').toLowerCase();
 
     return dispatch => 
-        fetch(`http://localhost:3000/bestsellers/${slug}`)
+        fetch(`http://localhost:3001/bestsellers/${slug}`)
             .then(response => response.json())
             .then(data => {
                 dispatch(setGenreBooks(data))
