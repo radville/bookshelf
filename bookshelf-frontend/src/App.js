@@ -19,7 +19,7 @@ class App extends Component {
     super(props);
     this.state = { 
       isLoggedIn: false,
-      user: {}
+      currentUser: {}
      };
   }
 
@@ -32,7 +32,7 @@ class App extends Component {
   handleLogin = (data) => {
     this.setState({
       isLoggedIn: true,
-      user: data.user
+      currentUser: data.user
     })
   }
 
