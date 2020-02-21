@@ -14,7 +14,7 @@ class BooksContainer extends Component {
       <div>
           <h3>{this.props.match.params.genre}</h3>
           <ol>
-            {this.props.books.map(book => <Book {...book} createBook={this.props.createBook} key={book.primary_isbn10} book={book}/>)}
+            {this.props.books.map(book => <Book {...book} currentUser={this.props.currentUser} createBook={this.props.createBook} key={book.primary_isbn10} book={book}/>)}
           </ol>
       </div>
     );

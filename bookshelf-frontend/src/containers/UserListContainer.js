@@ -15,7 +15,7 @@ class UserListContainer extends Component {
     render() {
         return (
         <div>
-            <UserList userBooks={this.props.userBooks} destroyBook={this.props.destroyBook} readToggle={this.props.readToggle}/>
+            <UserList currentUser={this.props.currentUser} userBooks={this.props.userBooks} destroyBook={this.props.destroyBook} readToggle={this.props.readToggle}/>
         </div>
         )
     }

@@ -40,7 +40,7 @@ class App extends Component {
   handleLogout = () => {
     this.setState({
     isLoggedIn: false,
-    user: {}
+    currentUser: {}
     })
   }
 
@@ -69,8 +69,14 @@ class App extends Component {
               )}
             />
             <Route exact path="/bestsellers" render={routerProps => <GenresContainer {...routerProps}/>}/>
-            <Route path="/mybooks" render={routerProps => <UserListContainer {...routerProps}/>}/>
-            <Route path="/bestsellers/:genre" render={routerProps => <BooksContainer {...routerProps}/>}/>
+            <Route path="/mybooks" render={routerProps => (
+                <UserListContainer {...routerProps} currentUser={this.state.currentUser}/>
+              )}
+            />
+            <Route path="/bestsellers/:genre" render={routerProps => (
+                <BooksContainer {...routerProps} currentUser={this.state.currentUser}/>
+              )}
+            />
             <Route exact path='/login' render={props => (
                 <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
               )}

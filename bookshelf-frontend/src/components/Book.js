@@ -14,7 +14,7 @@ class Book extends Component {
     const { book } = this.props 
 
     return(
-      < BookCard addBook={this.addBook} upvote={this.upvote} book={book} />
+      < BookCard currentUser={this.props.currentUser} addBook={this.addBook} upvote={this.upvote} book={book} />
     );
   }
 };

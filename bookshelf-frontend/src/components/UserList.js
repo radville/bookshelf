@@ -7,7 +7,7 @@ class UserList extends Component {
       <div>
         <h2>My books</h2>
         <div className="row">
-          {this.props.userBooks.map(userBook => <UserBook {...userBook} destroyBook={this.props.destroyBook} readToggle={this.props.readToggle} key={userBook.id} userBook={userBook}/>)}
+          {this.props.userBooks.map(userBook => <UserBook {...userBook} currentUser={this.props.currentUser} destroyBook={this.props.destroyBook} readToggle={this.props.readToggle} key={userBook.id} userBook={userBook}/>)}
         </div>
       </div>
     );
