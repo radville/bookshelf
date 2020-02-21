@@ -14,7 +14,7 @@ class Login extends Component {
     }
 
     // redirect if the user is already logged in
-    componentWillMount() {
+    componentDidMount() {
         return this.props.loggedInStatus ? this.redirect() : null
     }
 
