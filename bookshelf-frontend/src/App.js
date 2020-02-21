@@ -4,7 +4,6 @@ import './App.css';
 import axios from 'axios';
 import {
   BrowserRouter as Router,
-  Switch,
   Route
 } from 'react-router-dom';
 import NavBar from './components/NavBar';
@@ -65,8 +64,6 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} />
-          {/* Switch components will only show the first matched child <Route/> for any given path.  */}
-          {/* <Switch> */}
             <Route exact path='/' render={props => (
                 <Home {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn}/>
               )}
@@ -82,7 +79,6 @@ class App extends Component {
                 <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
               )}
             />
-          {/* </Switch> */}
         </div>
       </Router>
     );}
