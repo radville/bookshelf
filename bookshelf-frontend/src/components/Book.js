@@ -3,8 +3,6 @@ import BookCard from './BookCard'
 
 class Book extends Component {
   
-  state = {votes: 0}
-
   addBook = (book) => {
     this.props.createBook(book)
     window.location.href = "/mybooks";
