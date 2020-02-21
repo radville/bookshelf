@@ -35,18 +35,24 @@ const NavBar = (props) => {
             >
                 My books
             </NavLink>
-            <NavLink 
-                style={{ marginRight: '10vw', textDecoration: 'none', color: "white" }} 
-                to='/login'
-            >
-                Log In
-            </NavLink>
-            <NavLink 
-                style={{ marginRight: '10vw', textDecoration: 'none', color: "white" }} 
-                to='/signup'
-            >
-                Sign Up
-            </NavLink>
+            {
+                !props.loggedInStatus ? 
+                <div>
+                <NavLink 
+                    style={{ marginRight: '10vw', textDecoration: 'none', color: "white" }} 
+                    to='/login'
+                >
+                    Log In
+                </NavLink>
+                <NavLink 
+                    style={{ marginRight: '10vw', textDecoration: 'none', color: "white" }} 
+                    to='/signup'
+                >
+                    Sign Up
+                </NavLink> 
+                </div>
+                : null
+            }
             { 
                 props.loggedInStatus ? 
                 <NavLink 
@@ -55,8 +61,8 @@ const NavBar = (props) => {
                     onClick={handleClick}
                 >
                         Log Out
-                </NavLink> : 
-                null
+                </NavLink> 
+                : null
             }
         </Nav>
     );
