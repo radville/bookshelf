@@ -16,8 +16,10 @@ class BooksController < ApplicationController
   
     # POST /books
     def create
-      @book = Book.new(book_params)
+      @book = current_user.books.create!(book_params)
+
       if @book.save
+        @book.users.push(current_user)
         render json: @book, status: :created, location: @book
       else
         render json: @book.errors, status: :unprocessable_entity
