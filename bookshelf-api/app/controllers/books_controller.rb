@@ -1,12 +1,16 @@
+require "pry"
 class BooksController < ApplicationController
     # before_action :authenticate_user!
     before_action :set_book, only: [:show, :update, :destroy]
 
     # GET /books
     def index
-      @books = Book.all
-  
-      render json: @books
+      if logged_in?
+        books = current_user.books
+      else
+        books = Book.all
+      end
+      render json: books
     end
   
     # GET /books/1
@@ -19,7 +23,6 @@ class BooksController < ApplicationController
       @book = current_user.books.create!(book_params)
 
       if @book.save
-        @book.users.push(current_user)
         render json: @book, status: :created, location: @book
       else
         render json: @book.errors, status: :unprocessable_entity
