@@ -7,15 +7,16 @@ class BooksController < ApplicationController
     def index
       if logged_in?
         books = current_user.books
+        render json: books
       else
-        books = Book.all
+        render json: 
       end
-      render json: books
     end
   
     # GET /books/1
     def show
-      render json: @book
+      render status: 401,
+      errors: ['Please log in']
     end
   
     # POST /books
