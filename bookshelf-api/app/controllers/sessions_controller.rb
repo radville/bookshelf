@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
         
         if @user && @user.authenticate(session_params[:password])
             login!
+            binding.pry
             render json: {
                 logged_in: true,
                 user: @user
