@@ -6,10 +6,10 @@ class BooksController < ApplicationController
     # GET /books
     def index
       if logged_in?
-        books = current_user.books
-        render json: books
+        @books = current_user.books
+        render json: @books
       else
-        render json: 
+        render json: Book.all
       end
     end
   
