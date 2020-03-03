@@ -8,7 +8,7 @@ Code for adding user authentication was adapted from Alejandro Sabogal, "React w
 
 ### Installing
 
-1. Clone this repo to your local machine with `https://github.com/radville/booksehlf` 
+1. Clone this repo to your local machine with `https://github.com/radville/bookshelf` 
 
 2. From the `bookshelf-api` folder, run `bundle install` in the terminal to add all gems from the Gemfile
 
