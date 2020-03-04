@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users, only: [:create, :show]
   resources :userbooks, only: [:new, :create, :show, :destroy]
-  resources :books
+  resources :books, only: [:create, :index, :update, :destroy]
 
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

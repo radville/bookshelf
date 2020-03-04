@@ -1,7 +1,7 @@
 require "pry"
 class BooksController < ApplicationController
     # before_action :authenticate_user!
-    before_action :set_book, only: [:show, :update, :destroy]
+    before_action :set_book, only: [:update, :destroy]
 
     # GET /books
     def index
@@ -11,12 +11,6 @@ class BooksController < ApplicationController
       else
         render json: Book.all
       end
-    end
-  
-    # GET /books/1
-    def show
-      render status: 401,
-      errors: ['Please log in']
     end
   
     # POST /books
