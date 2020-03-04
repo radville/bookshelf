@@ -18,7 +18,9 @@ export const setBooks = books => {
 
 export const fetchUserBooks = () => {
     return dispatch => 
-        fetch("http://localhost:3001/books")
+        fetch("http://localhost:3001/books", {
+          credentials: 'include'
+        })
             .then(r => r.json())
             .then(data => {
                 dispatch(setBooks(data));

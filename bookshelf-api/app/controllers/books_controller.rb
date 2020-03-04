@@ -7,10 +7,11 @@ class BooksController < ApplicationController
     def index
       binding.pry
       if logged_in?
-        @books = current_user.books
+        user = User.find(session[:user_id])
+        @books = user.books
         render json: @books
       else
-        # render json: Book.all
+        render json: Book.all
       end
     end
   
