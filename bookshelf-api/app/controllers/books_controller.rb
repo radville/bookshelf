@@ -2,13 +2,12 @@ require "pry"
 class BooksController < ApplicationController
     # before_action :authenticate_user!
     before_action :set_book, only: [:update, :destroy]
+    before_action :set_user
 
     # GET /books
     def index
-      binding.pry
       if logged_in?
-        user = User.find(session[:user_id])
-        @books = user.books
+        @books = @user.books
         render json: @books
       else
         render json: Book.all
@@ -17,7 +16,8 @@ class BooksController < ApplicationController
   
     # POST /books
     def create
-      @book = current_user.books.create!(book_params)
+      binding.pry
+      @book = @user.books.create(book_params)
 
       if @book.save
         render json: @book, status: :created, location: @book
@@ -44,6 +44,10 @@ class BooksController < ApplicationController
       # Use callbacks to share common setup or constraints between actions.
       def set_book
         @book = Book.find(params[:id])
+      end
+
+      def set_user
+        @user = User.find(session[:user_id])
       end
   
       # Only allow a trusted parameter "white list" through.

@@ -34,7 +34,8 @@ export const createBook = book => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(book)
+      body: JSON.stringify(book),
+      credentials: 'include'
     })
       .then(response => response.json())
       .then(book => {
@@ -45,7 +46,8 @@ export const createBook = book => {
 export const destroyBook = id => {
   return dispatch =>
     fetch(`http://localhost:3001/books/${id}`, {
-      method: "DELETE"
+      method: "DELETE",
+      credentials: 'include'
     }).then(() => {
       dispatch(deleteBook(id));
     });
@@ -58,6 +60,7 @@ export const localReadToggle = id => {
 export const readToggle = book => {
   return dispatch => 
     fetch(`http://localhost:3001/books/${book.id}`, {
+      credentials: 'include',
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"

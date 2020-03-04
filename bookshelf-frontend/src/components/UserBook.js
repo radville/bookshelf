@@ -16,7 +16,6 @@ class UserBook extends Component {
 
   render() {
     const { userBook } = this.props
-    console.log(userBook)
     return(
       <div>
         <div 
