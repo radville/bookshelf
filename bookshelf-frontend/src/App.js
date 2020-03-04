@@ -39,8 +39,8 @@ class App extends Component {
   // log user out if server says user not logged in
   handleLogout = () => {
     this.setState({
-    isLoggedIn: false,
-    currentUser: {}
+      isLoggedIn: false,
+      currentUser: {}
     })
   }
 
