@@ -5,11 +5,12 @@ class BooksController < ApplicationController
 
     # GET /books
     def index
+      binding.pry
       if logged_in?
         @books = current_user.books
         render json: @books
       else
-        render json: Book.all
+        # render json: Book.all
       end
     end
   
