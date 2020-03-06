@@ -16,7 +16,6 @@ class BooksController < ApplicationController
   
     # POST /books
     def create
-      binding.pry
       @book = @user.books.create(book_params)
 
       if @book.save

@@ -6,15 +6,21 @@ import { fetchGenres } from "../actions/nytimes";
 class GenresContainer extends Component {
 
     componentDidMount() {
-        this.props.fetchGenres();
+        if (this.props.loggedInStatus === true) {this.props.fetchGenres()}
     }
 
     render() {
-        return (
+        if (this.props.loggedInStatus === true) {return (
             <div>
                 <Genres fetchGenreBooks={this.props.fetchGenreBooks} genres={this.props.genres} />
             </div>
-        )
+        )} else {
+            return (
+                <div>
+                    Please log in to see bestsellers.
+                </div>
+            )
+        }
   }
 }
 

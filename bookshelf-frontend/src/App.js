@@ -70,11 +70,11 @@ class App extends Component {
             />
             <Route exact path="/bestsellers" render={routerProps => <GenresContainer {...routerProps}/>}/>
             <Route path="/mybooks" render={routerProps => (
-                <UserListContainer {...routerProps} currentUser={this.state.currentUser}/>
+                <UserListContainer {...routerProps} currentUser={this.state.currentUser} loggedInStatus={this.state.isLoggedIn} />
               )}
             />
             <Route path="/bestsellers/:genre" render={routerProps => (
-                <BooksContainer {...routerProps} currentUser={this.state.currentUser}/>
+                <BooksContainer {...routerProps} currentUser={this.state.currentUser} loggedInStatus={this.state.isLoggedIn}/>
               )}
             />
             <Route exact path='/login' render={props => (

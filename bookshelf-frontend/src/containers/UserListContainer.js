@@ -9,15 +9,21 @@ import {
 
 class UserListContainer extends Component {
     componentDidMount() {
-        this.props.fetchUserBooks();
+        if (this.props.loggedInStatus === true) {this.props.fetchUserBooks()}
     }
 
     render() {
-        return (
+        if (this.props.loggedInStatus === true) {return (
             <div>
                 <UserList currentUser={this.props.currentUser} userBooks={this.props.userBooks} destroyBook={this.props.destroyBook} readToggle={this.props.readToggle}/>
             </div>
-        )
+        )} else {
+            return (
+                <div>
+                    Please log in
+                </div>
+            )
+        }
     }
 }
 
