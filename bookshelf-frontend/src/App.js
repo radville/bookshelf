@@ -68,7 +68,10 @@ class App extends Component {
                 <Home {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn}/>
               )}
             />
-            <Route exact path="/bestsellers" render={routerProps => <GenresContainer {...routerProps}/>}/>
+            <Route exact path="/bestsellers" render={routerProps => (
+                <GenresContainer {...routerProps} loggedInStatus={this.state.isLoggedIn}/>
+              )}
+            />
             <Route path="/mybooks" render={routerProps => (
                 <UserListContainer {...routerProps} currentUser={this.state.currentUser} loggedInStatus={this.state.isLoggedIn} />
               )}

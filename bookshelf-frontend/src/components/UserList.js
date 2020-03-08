@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import UserBook from "./UserBook.js"
 
 class UserList extends Component {
+  
   render() {
+    console.log("UserList", this.props.userBooks)
+
     return(
       <div>
         <h2>My books</h2>

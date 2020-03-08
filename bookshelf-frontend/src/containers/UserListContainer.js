@@ -13,17 +13,12 @@ class UserListContainer extends Component {
     }
 
     render() {
-        if (this.props.loggedInStatus === true) {return (
+        console.log("userlistcontainer", this.props.userBooks)
+        return (
             <div>
                 <UserList currentUser={this.props.currentUser} userBooks={this.props.userBooks} destroyBook={this.props.destroyBook} readToggle={this.props.readToggle}/>
             </div>
-        )} else {
-            return (
-                <div>
-                    Please log in
-                </div>
-            )
-        }
+        )
     }
 }
 
