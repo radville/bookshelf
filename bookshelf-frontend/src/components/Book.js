@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import  { Redirect } from 'react-router-dom'
 
 class Book extends Component {
   
   addBook = (book) => {
-    console.log("here")
-    this.props.createBook(book)
-    window.location.href = "/mybooks";
+    this.props.createBook(book);
+    // window.location.href = "/mybooks";
   }
 
   render() {
