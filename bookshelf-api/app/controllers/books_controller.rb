@@ -16,14 +16,23 @@ class BooksController < ApplicationController
   
     # POST /books
     def create
-      binding.pry
-      if user.books.include?()
-      @book = @user.books.create(book_params)
-
-      if @book.save
-        render json: @book, status: :created, location: @book
+      book_match = Book.where(title: book_params["title"])
+      if !book_match.empty?
+        binding.pry
+        if book_match[0].users.include?(current_user)
+          render json: book_match, status: :created, location: book_match
+        else
+          book_match[0].users << current_user
+          render json: book_match, status: :created, location: book_match
+        end
       else
-        render json: @book.errors, status: :unprocessable_entity
+        @book = @user.books.create(book_params)
+
+        if @book.save
+          render json: @book, status: :created, location: @book
+        else
+          render json: @book.errors, status: :unprocessable_entity
+        end
       end
     end
   
