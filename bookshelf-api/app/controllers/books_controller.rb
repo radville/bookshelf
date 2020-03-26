@@ -18,7 +18,6 @@ class BooksController < ApplicationController
     def create
       book_match = Book.where(title: book_params["title"])
       if !book_match.empty?
-        binding.pry
         if book_match[0].users.include?(current_user)
           render json: book_match, status: :created, location: book_match
         else
