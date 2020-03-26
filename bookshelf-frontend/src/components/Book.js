@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import  { Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
 
 class Book extends Component {
   
@@ -36,4 +36,4 @@ class Book extends Component {
   }
 };
 
-export default Book;
+export default withRouter(Book);
