@@ -5,8 +5,7 @@ class Book extends Component {
   
   addBook = (book) => {
     this.props.createBook(book);
-    this.props.history.push('/mybooks')
-    // window.location.href = "/mybooks";
+    setTimeout(() => this.props.history.push('/mybooks'), 1000)
   }
 
   render() {
