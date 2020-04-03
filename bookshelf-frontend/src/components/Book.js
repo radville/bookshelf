@@ -5,6 +5,7 @@ class Book extends Component {
   
   addBook = (book) => {
     this.props.createBook(book);
+    // set 1 second delay so reducer has time to create book in database
     setTimeout(() => this.props.history.push('/mybooks'), 1000)
   }
 
